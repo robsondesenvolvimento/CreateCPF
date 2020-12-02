@@ -25,8 +25,8 @@ namespace CreateCpf.Core
 
         public void Set9DigitosIniciais(string digitos)
         {
-            if (digitos.Trim().Length > 9)
-                throw new ArgumentException("Número máximo de digitos é 9");
+            if (digitos.Trim().Length != 9)
+                throw new ArgumentException("Número de digitos deve ser igual a 9");
 
             if (Regex.IsMatch(digitos, ".*[a-zA-Z]+.*"))
                 throw new ArgumentException("Só números são válidos no CPF");
